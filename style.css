@@ -1,0 +1,273 @@
+/* ---------- Fonts ---------- */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap");
+
+@font-face {
+  font-family: "Newake-Demo";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/61db1b99ae6df82799bba606/fonts/newakefont-demo.otf")
+       format("opentype");
+}
+
+/* ---------- Base ---------- */
+:root{
+  --red:#9E2A2B;
+  --gold:#E09F3E;
+  --cream:#FAECB6;
+  --wrap:1440px;      
+}
+
+*{ box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+html,body{ height:100%; }
+body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color: var(--red);
+  background: #fff;
+  line-height: 1.5;
+}
+
+.wrap{ width:100%; max-width:var(--wrap); margin:0 auto; padding:0 32px; }
+.m0{ margin:0; }
+
+/* ---------- Topbar & Hero ---------- */
+.topbar{
+  background: var(--red);
+  color: var(--gold);
+}
+.nav-row{
+  height: 72px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{ font-weight:900; font-size:24px; color:var(--gold); }
+.nav{ display:flex; gap:40px; }
+.nav a{
+  font-weight:900; font-size:24px; color:var(--gold); text-decoration:none;
+}
+.nav a:hover{ opacity:.75; }
+
+.hero{
+  background: var(--red);
+  color: var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  min-height: 640px;             /* puts title roughly in the middle */
+}
+.hero-center{ text-align:center; }
+.hero-title{ font-weight:900; font-size:96px; letter-spacing:0; }
+.hero-sub{ font-weight:900; font-size:36px; margin-top:12px; }
+
+/* ---------- Sections ---------- */
+.cream{ background: var(--cream); }
+section{ padding: 80px 0; }
+
+/* shared section heading */
+.section-title{
+  font-family: "Inter", sans-serif;
+  font-weight:900;
+  font-size: 96px;
+  line-height:1.05;
+  color: var(--red);
+  margin-bottom: 24px;
+}
+.center{ text-align:center; }
+
+/* body copy (Newake used in your Figma for text blocks) */
+.body, .facts{
+  font-family: "Newake-Demo", sans-serif;
+  font-weight:400;
+  font-size: 32px;
+  line-height: 1.4;
+  color: var(--red);
+}
+
+/* ---------- Two-column grids ---------- */
+.grid-2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ---------- WHO section ---------- */
+.who-text { margin-top: 8px; 
+padding-left: 50px;
+}
+.who-img {
+  display: flex;
+  justify-content: center;        
+  align-items: center;           
+  padding-top: 40px;             
+  padding-bottom: 10px;           
+}
+
+.who-img img {
+  width: 80%;
+  max-width: 450px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 50% / 35%;
+  display: block;
+}
+
+/* ======== EARLY LIFE ======== */
+.early-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;    
+  align-items: start;
+  gap:0;
+  margin-top: 60px;
+}
+.early-left { 
+    margin-left: -60px;
+}
+.early-left img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;                  
+  display: block;
+}
+
+.early-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.early-right p {
+  margin-bottom: 24px;
+  line-height: 1.7;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.elvis-2 {
+  width: 90%;                     
+  height: 400px;                   
+  object-fit: cover;              
+  object-position: top center;     
+  border-radius: 60% / 100%;        
+  margin: 20px auto 0; 
+  padding-top: 60px;           
+}
+
+/* ---------- CAREER HIGHLIGHTS ---------- */
+.career-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% text, 50% image */
+  align-items: stretch;           /* image fills vertically */
+  gap: 0; 
+  margin-bottom: 0;   
+  padding-bottom: 0;                     /* no spacing between sides */
+}
+
+.career-img {
+  display: flex;
+  justify-content: center;          /* centers the image horizontally */
+  align-items: center;              /* centers vertically */
+}
+
+.career-img img {
+  width: 100%;              /* takes the full column width */
+  max-width: none;          /* removes any limits */
+  height: 100%;             /* matches section height */
+  object-fit: cover;        /* fills the space perfectly */
+  display: block;
+  transform: translateY(0); /* no offset */
+}
+
+/* ---------- HIT SONGS ---------- */
+.hits-wrap {
+  text-align: center;
+  background-color: #FAECB6;
+  position: relative;
+  height: 900px;     
+  padding-top: 100px;    
+  overflow: hidden;     
+}
+
+/* container for all vinyls */
+.vinyl-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 70px;                   
+  margin-top: 20px;
+}
+
+/* curved layout */
+.vinyl-item:nth-child(1),
+.vinyl-item:nth-child(5) {
+  transform: translateY(300px);
+}
+.vinyl-item:nth-child(2),
+.vinyl-item:nth-child(4) {
+  transform: translateY(100px);
+}
+
+/* each vinyl group */
+.vinyl-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: px;
+}
+
+/* vinyl image */
+.vinyl-item img {
+  width: 200px;               
+  height: 200px;
+  object-fit: contain;
+  transition: transform 5s ease;
+}
+
+.vinyl-item img:hover {
+  transform: rotate(720deg) scale(1.1);
+}
+
+/* labels under each vinyl */
+.vinyl-item p {
+  font-weight: bold;
+  font-size: 16px;
+  color: #8b2e23;              
+  margin: 0;
+}
+
+/* Bruno Mars center image */
+.bruno-bottom {
+  width: 700px;
+  height: auto;
+  position: absolute;
+  bottom: 100;            
+  left: 47%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px){
+  .section-title{ font-size: 72px; }
+  .body, .facts{ font-size: 28px; }
+}
+
+@media (max-width: 900px){
+  .grid-2{ grid-template-columns: 1fr; }
+  .career-img{ justify-content:center; }
+  .hero-title{ font-size: 72px; }
+  .hero-sub{ font-size: 30px; }
+  .nav{ gap:20px; }
+}
+
+@media (max-width: 600px){
+  .wrap{ padding: 0 20px; }
+  .section-title{ font-size: 48px; }
+  .body, .facts{ font-size: 22px; }
+  .brand, .nav a{ font-size: 20px; }
+  .hero{ min-height: 520px; }
+}
+
+section {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
